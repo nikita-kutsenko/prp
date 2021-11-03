@@ -1,24 +1,26 @@
-@import "./../import/variables.scss", "./../animation/partners.scss";
+@import "./../import/variables.scss", "./../animation/galleryAnimation.scss";
 
 .partners {
   padding: 120px 0;
-  height: 480px;
+  height: auto;
+  max-height: 240px;
   margin: 0 auto;
-  background-color: $white-c;
+  background-color: $lightBlue-c;
   z-index: 30;
 
-  .carousel {
+  .partnersSliderBlock {
     position: relative;
-    overflow: hidden;
-    &__nav {
+    // overflow: hidden;
+
+    .controllers {
       z-index: 35;
 
       &_side {
         position: absolute;
+        height: 130px;
+        width: 110px;
         top: 50%;
         transform: translate(0, -50%);
-        height: 336px;
-        width: 110px;
         cursor: pointer;
 
         &::after {
@@ -33,7 +35,7 @@
         left: 0;
         background: linear-gradient(
           90deg,
-          $white-c 50.03%,
+          $lightBlue-c 50.03%,
           rgba(249, 249, 249, 0) 100%
         );
         z-index: 36;
@@ -46,7 +48,7 @@
         right: 0px;
         background: linear-gradient(
           -90deg,
-          $white-c 50.03%,
+          $lightBlue-c 50.03%,
           rgba(249, 249, 249, 0) 100%
         );
         z-index: 37;
@@ -58,7 +60,7 @@
       }
     }
 
-    &__feed {
+    .partnersSlider {
       position: relative;
       display: flex;
       flex-direction: row;
@@ -67,14 +69,16 @@
       z-index: 32;
 
       &_item {
-        height: 336px;
-        margin: 0 20px;
+        margin: 0 12px;
+        height: 130px;
 
-        &_img {
+        img {
+          min-width: 204px;
+          min-height: 130px;
+          max-width: 204px;
+          max-height: 130px;
+          object-fit: cover;
           border-radius: 14px;
-          min-width: 336px;
-          min-height: 336px;
-          background-color: #e2e;
         }
       }
     }

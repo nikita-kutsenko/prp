@@ -1,6 +1,6 @@
 @import "./../import/variables.scss";
 
-@keyframes chevronLeft {
+@keyframes moveLeft {
   0% {
     left: 20px;
   }
@@ -8,7 +8,7 @@
     left: 30px;
   }
 }
-@keyframes chevronRight {
+@keyframes moveRight {
   0% {
     right: 20px;
   }
@@ -17,9 +17,9 @@
   }
 }
 
-.gallery {
-  .slider {
-    &__controllers {
+.partners {
+  .partnersSliderBlock {
+    .controllers {
       .left {
         &::after {
           animation: chevronLeft 1s infinite alternate-reverse ease-in-out;
@@ -34,10 +34,10 @@
       }
     }
 
-    &__list {
+    .partnersSlider {
       transition: left 0.25s ease-out;
       &_item {
-        &_img {
+        img {
         }
       }
     }

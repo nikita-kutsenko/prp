@@ -1,0 +1,24 @@
+{
+  "name": "prp",
+  "version": "1.0.0",
+  "description": "Personal website for PRP company",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikita-kutsenko/prp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikita-kutsenko/prp/issues"
+  },
+  "homepage": "https://github.com/nikita-kutsenko/prp#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.43.4"
+  }
+}

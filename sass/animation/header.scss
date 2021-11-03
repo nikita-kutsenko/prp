@@ -1,0 +1,21 @@
+.header {
+  .nav {
+    &__list {
+      &_item {
+        transition: opacity 0.25s ease-out;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    &__cta {
+      transition: opacity 0.25s ease-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .bg {
+    transition: opacity 0.25s ease-out;
+  }
+}

@@ -1,0 +1,45 @@
+@import "./../import/variables.scss";
+
+@keyframes chevronLeft {
+  0% {
+    left: 20px;
+  }
+  100% {
+    left: 30px;
+  }
+}
+@keyframes chevronRight {
+  0% {
+    right: 20px;
+  }
+  100% {
+    right: 30px;
+  }
+}
+
+.gallery {
+  .slider {
+    &__controllers {
+      .left {
+        &::after {
+          animation: chevronLeft 1s infinite alternate-reverse ease-in-out;
+          left: 0;
+        }
+      }
+      .right {
+        &::after {
+          animation: chevronRight 1s infinite alternate-reverse ease-in-out;
+          right: 0;
+        }
+      }
+    }
+
+    &__list {
+      transition: left 0.25s ease-out;
+      &_item {
+        &_img {
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "./../import/variables.scss", "./../animation/header.scss";
+
+.header {
+  position: fixed;
+  width: calc(100% - 96px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 48px;
+  z-index: 10000;
+
+  .logo {
+    height: 62px;
+    filter: $shadow_header;
+    z-index: 10010;
+  }
+  .nav {
+    display: flex;
+    filter: $shadow_header;
+    &__list {
+      display: flex;
+      align-items: center;
+      &_item {
+        margin: 0 12px;
+        opacity: 0.8;
+        .link {
+          padding: 16px 4px;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+          color: $white-c;
+        }
+        &:last-of-type {
+          margin: 0 48px 0 12px;
+        }
+      }
+    }
+    &__cta {
+      padding: 8px 0;
+      background-color: $white-c;
+      border-radius: 14px;
+
+      .link {
+        padding: 8px 18px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: $blue-c;
+      }
+    }
+    z-index: 10020;
+  }
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: $blue-gradient;
+    opacity: 0;
+    z-index: 10001;
+  }
+}
+
+.fill_header {
+  .logo {
+    height: 62px;
+    filter: none;
+  }
+  .nav {
+    filter: none;
+  }
+  .bg {
+    opacity: 1;
+  }
+}

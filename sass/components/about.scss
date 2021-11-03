@@ -1,0 +1,86 @@
+@import "./../import/variables.scss";
+
+.about {
+  background-color: $white-c;
+  height: auto;
+  max-height: none;
+  z-index: 10;
+
+  &__card {
+    display: flex;
+    margin: 0 auto 84px;
+    max-width: 788px;
+
+    &_img {
+      width: 264px;
+      height: 264px;
+      margin-right: 42px;
+      // background-color: $white-c;
+      background: url(./../assets/img/about-profile.jpg) no-repeat center;
+      border: 12px solid $lightBlue-c;
+      border-radius: 50%;
+    }
+
+    &_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 456px;
+
+      .name {
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+        color: $darkBlue-c;
+      }
+      .work-title {
+        margin-bottom: 24px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+        color: $blue-c;
+      }
+      .description {
+        margin-bottom: 20px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 18px;
+        color: $black-c;
+      }
+
+      .socialMedia {
+        display: flex;
+        &_item {
+          position: relative;
+          display: flex;
+          margin-right: 4px;
+          &_link {
+          }
+        }
+      }
+    }
+  }
+
+  &__textBlock {
+    max-width: 660px;
+    &_title {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      color: $blue-c;
+    }
+    &_text {
+      margin-top: 24px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 18px;
+      color: $black-c;
+      &:last-of-type {
+        margin-top: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+// ----- variables
+$lap_maxHeight: 900px;
+
+// ----- colors
+$white-c: #f9f9f9;
+$lightBlue-c: #e1eef4;
+$blue-c: #499ec4;
+$darkBlue-c: #105589;
+$black-c: #001233;
+// hero
+$hero-bg-c: rgba(73, 158, 196, 0.5);
+$services-bg-c: rgba(16, 85, 137, 0.3);
+
+// ----- gradients
+$blue-gradient: linear-gradient(90deg, $darkBlue-c 0%, $blue-c 100%);
+
+// ----- shadows
+$shadow_header: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.7));

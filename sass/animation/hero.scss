@@ -1,0 +1,47 @@
+@import "./../import/variables.scss";
+
+@keyframes textDown {
+  0% {
+    bottom: 118px;
+  }
+  100% {
+    bottom: 102px;
+  }
+}
+
+@keyframes arrowDown {
+  0% {
+    bottom: 84px;
+  }
+  100% {
+    bottom: 64px;
+  }
+}
+
+.hero {
+  &__side {
+    &_block {
+      &_cta {
+        &::after {
+          transition: right 0.25s ease-out;
+        }
+
+        &:hover {
+          cursor: pointer;
+          &::after {
+            right: 12px;
+          }
+        }
+      }
+    }
+
+    &_scroll {
+      &::before {
+        animation: textDown 2.5s infinite alternate-reverse ease-in-out;
+      }
+      &::after {
+        animation: arrowDown 2.5s infinite alternate-reverse ease-in-out;
+      }
+    }
+  }
+}

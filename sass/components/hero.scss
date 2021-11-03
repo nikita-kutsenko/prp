@@ -1,0 +1,94 @@
+@import "./../import/variables.scss", "./../animation/hero.scss";
+
+.hero {
+  position: relative;
+  height: calc(100% + 70px);
+  min-height: 872px;
+  max-height: calc($lap_maxHeight + 70px);
+  background: linear-gradient(0deg, $hero-bg-c, $hero-bg-c),
+    url(./../assets/img/hero-bg.jpg) top / cover no-repeat;
+  z-index: 1;
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: calc(50% - 60px);
+    padding: 0 12px 0 48px;
+    background: rgba(16, 85, 137, 0.3);
+    backdrop-filter: blur(6px);
+    z-index: 2;
+
+    &_title {
+      padding-top: 190px;
+      margin-bottom: 38px;
+      font-weight: bold;
+      font-size: 72px;
+      line-height: 88px;
+      color: $black-c;
+      max-width: 660px;
+    }
+
+    &_block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 230px;
+      max-width: 660px;
+
+      &_description {
+        margin-bottom: 36px;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 40px;
+        color: $white-c;
+      }
+
+      &_cta {
+        position: relative;
+        display: inline-block;
+        padding: 12px 50px 12px 16px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: $blue-c;
+        background-color: $white-c;
+        border-radius: 24px;
+
+        &::after {
+          position: absolute;
+          right: 18px;
+          width: 24px;
+          height: 24px;
+          content: url(./../assets/icons/hero-cta-arrow.svg);
+        }
+      }
+    }
+
+    &_scroll {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      &::before {
+        position: absolute;
+        bottom: 118px;
+        right: -29px;
+
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        color: $white-c;
+        content: "scroll";
+      }
+      &::after {
+        position: absolute;
+        bottom: 84px;
+        right: -5px;
+        width: 12px;
+        height: 26px;
+        content: url(./../assets/icons/hero-scroll-arrow.svg);
+      }
+    }
+  }
+}

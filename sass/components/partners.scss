@@ -1,0 +1,82 @@
+@import "./../import/variables.scss", "./../animation/partners.scss";
+
+.partners {
+  padding: 120px 0;
+  height: 480px;
+  margin: 0 auto;
+  background-color: $white-c;
+  z-index: 30;
+
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    &__nav {
+      z-index: 35;
+
+      &_side {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 336px;
+        width: 110px;
+        cursor: pointer;
+
+        &::after {
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          content: url(./../assets/icons/gallery-chevron-left.svg);
+        }
+      }
+
+      .left {
+        left: 0;
+        background: linear-gradient(
+          90deg,
+          $white-c 50.03%,
+          rgba(249, 249, 249, 0) 100%
+        );
+        z-index: 36;
+
+        &::after {
+          left: 20px;
+        }
+      }
+      .right {
+        right: 0px;
+        background: linear-gradient(
+          -90deg,
+          $white-c 50.03%,
+          rgba(249, 249, 249, 0) 100%
+        );
+        z-index: 37;
+
+        &::after {
+          right: 20px;
+          transform: translate(0, -50%) rotate(180deg);
+        }
+      }
+    }
+
+    &__feed {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      max-width: 1128px;
+      left: 0;
+      z-index: 32;
+
+      &_item {
+        height: 336px;
+        margin: 0 20px;
+
+        &_img {
+          border-radius: 14px;
+          min-width: 336px;
+          min-height: 336px;
+          background-color: #e2e;
+        }
+      }
+    }
+  }
+}

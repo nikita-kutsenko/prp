@@ -13,6 +13,7 @@ $services-bg-c: rgba(16, 85, 137, 0.3);
 
 // ----- gradients
 $blue-gradient: linear-gradient(90deg, $darkBlue-c 0%, $blue-c 100%);
+$blue-gradient-footer: linear-gradient(-90deg, $darkBlue-c 0%, $blue-c 100%);
 
 // ----- shadows
 $shadow_header: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.7));

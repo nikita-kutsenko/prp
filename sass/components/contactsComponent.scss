@@ -1,0 +1,126 @@
+@import "./../import/variables.scss";
+
+.contacts {
+  height: auto;
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 96px;
+    .info {
+      min-width: 546px;
+      margin-right: 24px;
+
+      &__title {
+        position: relative;
+        font-weight: 300;
+        font-size: 42px;
+        line-height: 52px;
+        text-align: center;
+        margin: 0 0 58px;
+
+        color: $black-c;
+
+        &::before {
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          width: 80px;
+          border-bottom: 4px solid $blue-c;
+          border-radius: 4px;
+          content: "";
+        }
+      }
+
+      &__subtitle {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 16px;
+        color: $blue-c;
+      }
+
+      &__location {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 4px;
+        color: $black-c;
+      }
+      address:last-of-type {
+        margin-bottom: 64px;
+      }
+
+      &__phone {
+        display: block;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        color: $black-c;
+      }
+
+      &__email {
+        display: block;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: $black-c;
+      }
+    }
+  }
+  .logo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .line {
+      width: 48px;
+      height: 48px;
+      background: $blue-gradient-footer;
+    }
+
+    .left {
+      height: 120px;
+      margin-right: 24px;
+
+      .line {
+        width: 48px;
+        &:first-of-type {
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    .logoImg {
+      height: 120px;
+      margin-right: 24px;
+    }
+
+    .right {
+      height: 120px;
+      position: relative;
+      width: calc(100% - 294px);
+      .top {
+        width: 100%;
+        margin-bottom: 24px;
+      }
+      .bottom {
+        display: flex;
+        flex-direction: row;
+        .text {
+          margin-right: 24px;
+          max-width: 202px;
+          text-transform: uppercase;
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 24px;
+          color: #000000;
+        }
+        .line {
+          width: calc(100% - 226px);
+        }
+      }
+    }
+  }
+}

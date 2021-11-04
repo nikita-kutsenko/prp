@@ -30,7 +30,7 @@ function submitForm() {
   const subject = "PRP - Форма связи";
 
   window.open(
-    "mailto:example@gmail.com?subject=" +
+    "mailto:ruslan.ponomarenko@pr-p.com.ua?subject=" +
       encodeURIComponent(subject) +
       "&body=Имя Фамилия:%20" +
       encodeURIComponent(firstname) +

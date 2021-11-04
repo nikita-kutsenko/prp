@@ -63,8 +63,8 @@
       position: relative;
       display: flex;
       flex-direction: row;
-      max-width: 1128px;
-      left: 0;
+      width: 1128px;
+      left: -1128px;
       z-index: 32;
 
       &_item {

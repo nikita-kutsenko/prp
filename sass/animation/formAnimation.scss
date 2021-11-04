@@ -1,0 +1,18 @@
+@import "./../import/variables.scss";
+
+.form {
+  .formArea {
+    &__submit {
+      &::after {
+        transition: right 0.25s ease-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+        &::after {
+          right: 12px;
+        }
+      }
+    }
+  }
+}

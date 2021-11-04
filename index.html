@@ -158,7 +158,42 @@
   </section>
 
   <section id="form" class="form block">
-    <h2 class="block__title">Форма связи</h2>
+    <!-- Global form area -->
+    <form class="formArea">
+      <!-- white area -->
+      <div class="whiteArea">
+        <h2 class="whiteArea__title">Форма связи</h2>
+        <h3 class="whiteArea__description">Введите Ваши данные для связи, а так же интересующий Вас вопрос.</h3>
+
+        <div class="whiteArea__content">
+          <div class="field">
+            <label for="form_firstname" class="">Имя</label>
+            <input type="text" name="form_firstname" id="form_firstname" placeholder="Иван">
+          </div>
+
+          <div class="field">
+            <label for="form_lastname" class="">Фамилия</label>
+            <input type="text" name="form_lastname" id="form_lastname" placeholder="Иванов">
+          </div>
+
+          <div class="field">
+            <label for="form_email" class="">Email</label>
+            <input type="email" name="form_email" id="form_email" placeholder="email@email.com">
+          </div>
+
+          <div class="field">
+            <label for="form_phone" class="">Телефон</label>
+            <input type="tel" name="form_phone" id="form_phone" placeholder="+380123456789">
+          </div>
+
+          <div class="field">
+            <label for="form_message" class="">Сообщение</label>
+            <textarea name="form_message" id="form_message" cols="30" rows="10"  placeholder="Введите ваше сообщение"></textarea>
+          </div>
+        </div>
+      </div>
+      <span id="form_submit" class="formArea__submit"onclick="submitForm()">Отправить</span>
+    </form>
   </section>
 
   <section id="contacts" class="contacts block">
@@ -179,7 +214,6 @@
       : header.classList.remove('fill_header')
     });
   </script>
-
   <script>
     /** 
      * Dislpaying full list of services on "show more" button click 
@@ -188,109 +222,10 @@
       services = document.getElementById('services');
     btn.addEventListener('click', () => services.classList.add('opened') )
   </script>
-
-  <script>
-    const slider = document.getElementById('slider');
-    const left = document.getElementById('leftController');
-    const right = document.getElementById('rightController');
-    const sliderItems = slider.getElementsByClassName('slider_item');
-
-    const STEP = 376;
-    var INDEX = 1;
-    var LAST_INDEX = sliderItems.length;
-
-    const firstSlide = sliderItems[0];
-    const lastSlide = sliderItems[sliderItems.length - 1];
-    const cloneFirst = firstSlide.cloneNode(true);
-    const cloneLast = lastSlide.cloneNode(true);
-
-    slider.appendChild(cloneFirst);
-    slider.insertBefore(cloneLast, firstSlide);
-
-    const checkSlider = (direction) => {
-      slider.style.left || (slider.style.left = '0px');
-
-      if (direction === 'left') {
-        if (INDEX === 1) {
-          slider.style.left = `${ -1 * LAST_INDEX * STEP }px`;
-          INDEX = LAST_INDEX;
-          return
-        }
-        INDEX--
-        return
-      } 
-
-      if (INDEX === LAST_INDEX) {
-        slider.style.left = `${STEP}px`;
-        INDEX = 1;
-        return
-      }
-      INDEX++
-    }
-    const moveLeft = () => {
-      checkSlider('left');
-      slider.style.left = `${ parseInt(slider.style.left) + STEP }px`;
-    }
-    const moveRight = () => {
-      checkSlider('right');
-      slider.style.left = `${ parseInt(slider.style.left) - STEP }px`;
-    }
-
-    left.addEventListener('click', moveLeft);
-    right.addEventListener('click', moveRight);
-  </script>
-
-  <script>
-    const sliderP = document.getElementById('partnersSlider');
-    const leftP = document.getElementById('partnersLeftController');
-    const rightP = document.getElementById('partnersRightController');
-    const sliderItemsP = sliderP.getElementsByClassName('partnersSlider_item');
-
-    const STEP_P = 228;
-    var INDEX_P = 1;
-    var LAST_INDEX_P = sliderItemsP.length;
-
-    const firstSlideP = sliderItemsP[0];
-    const lastSlideP = sliderItemsP[sliderItemsP.length - 1];
-    const cloneFirstP = firstSlideP.cloneNode(true);
-    const cloneLastP = lastSlideP.cloneNode(true);
-
-    sliderP.appendChild(cloneFirstP);
-    sliderP.insertBefore(cloneLastP, firstSlideP);
-
-    const checkSliderP = (direction) => {
-      sliderP.style.left || (sliderP.style.left = '0px');
-
-      if (direction === 'left') {
-        if (INDEX_P === 1) {
-          sliderP.style.left = `${ -1 * LAST_INDEX_P * STEP_P }px`;
-          INDEX_P = LAST_INDEX_P;
-          return
-        }
-        INDEX_P--
-        return
-      } 
-
-      if (INDEX_P === LAST_INDEX_P) {
-        sliderP.style.left = `${STEP_P}px`;
-        INDEX_P = 1;
-        return
-      }
-      INDEX_P++
-    }
-    const moveLeftP = () => {
-      checkSliderP('left');
-      sliderP.style.left = `${ parseInt(sliderP.style.left) + STEP_P }px`;
-    }
-    const moveRightP = () => {
-      checkSliderP('right');
-      sliderP.style.left = `${ parseInt(sliderP.style.left) - STEP_P }px`;
-    }
-
-
-    leftP.addEventListener('click', moveLeftP);
-    rightP.addEventListener('click', moveRightP);
-  </script>
+  <script src="/js/gallerySlider.js"></script>
+  <script src="/js/partnersSlider.js"></script>
+  <script src="/js/emailActions.js"></script>
+  <!-- <script src="/js/emailActions.js"></script> -->
 
 </body>
 </html>

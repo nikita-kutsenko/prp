@@ -17,8 +17,8 @@
   }
 }
 
-.gallery {
-  .sliderBlock {
+.partners {
+  .partnersSliderBlock {
     .controllers {
       .left {
         &::after {
@@ -34,7 +34,7 @@
       }
     }
 
-    .slider {
+    .partnersSlider {
       transition: left 0.25s ease-out;
       &_item {
         img {

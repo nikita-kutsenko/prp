@@ -1,4 +1,4 @@
-@import "./../import/variables.scss", "./../animation/galleryAnimation.scss";
+@import "./../import/variables.scss", "./../animation/partnersAnimation.scss";
 
 .partners {
   padding: 120px 0;
@@ -10,7 +10,7 @@
 
   .partnersSliderBlock {
     position: relative;
-    // overflow: hidden;
+    overflow: hidden;
 
     .controllers {
       z-index: 35;

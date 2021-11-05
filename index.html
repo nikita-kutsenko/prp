@@ -11,6 +11,7 @@
   <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
   <title>PRP</title>
 </head>
+<!-- <body class="openedFullScreen"> -->
 <body>
   <header id="header" class="header ">
     <a href="#hero" class="logo">
@@ -124,37 +125,37 @@
     <!-- slider -->
     <div class="sliderBlock">
       <div class="controllers">
-        <span id="leftController" class="controllers_side left"></span>
-        <span id="rightController" class="controllers_side right"></span>
+        <span id="sliderPrevBtn" class="controllers_side left"></span>
+        <span id="sliderNextBtn" class="controllers_side right"></span>
       </div>
       <ul id="slider" class="slider">
-        <li class="slider_item"><img src="assets/img/gallery-1.jpeg" alt="1" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-2.jpeg" alt="2" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-3.jpeg" alt="3" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-4.jpeg" alt="4" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-5.jpeg" alt="5" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-6.jpeg" alt="6" loading="lazy" srcset=""></li>
+        <li class="slider_item"><img src="assets/img/gallery-1.jpeg" alt="1" data-item_id="1" loading="lazy" srcset=""></li>
+        <li class="slider_item"><img src="assets/img/gallery-2.jpeg" alt="2" data-item_id="2" loading="lazy" srcset=""></li>
+        <li class="slider_item"><img src="assets/img/gallery-3.jpeg" alt="3" data-item_id="3" loading="lazy" srcset=""></li>
+        <li class="slider_item"><img src="assets/img/gallery-4.jpeg" alt="4" data-item_id="4" loading="lazy" srcset=""></li>
+        <li class="slider_item"><img src="assets/img/gallery-5.jpeg" alt="5" data-item_id="5" loading="lazy" srcset=""></li>
+        <li class="slider_item"><img src="assets/img/gallery-6.jpeg" alt="6" data-item_id="6" loading="lazy" srcset=""></li>
       </ul>
     </div>
   </section>
   
-  <!-- <section id="gallery" class="gallery block">
-    <h2 class="block__title">Галерея</h2>
-    <div class="sliderBlock">
-      <div class="controllers">
-        <span id="leftController" class="controllers_side left"></span>
-        <span id="rightController" class="controllers_side right"></span>
-      </div>
-      <ul id="slider" class="slider">
-        <li class="slider_item"><img src="assets/img/gallery-1.jpeg" alt="1" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-2.jpeg" alt="2" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-3.jpeg" alt="3" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-4.jpeg" alt="4" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-5.jpeg" alt="5" loading="lazy" srcset=""></li>
-        <li class="slider_item"><img src="assets/img/gallery-6.jpeg" alt="6" loading="lazy" srcset=""></li>
-      </ul>
-    </div>
-  </section> -->
+  <div class="fullScreen">
+    <span id="prevBtnFullScreen" class="prevBtn">
+      <svg width="48" height="54" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M33 6.68878L15 26.7597L32.99 46.8217" stroke="#F9F9F9" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>        
+    </span>
+
+    <img id="imageFullScreen" class="image" src="" alt="">
+
+    <span id="nextBtnFullScreen" class="nextBtn">
+      <svg width="48" height="54" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M33 6.68878L15 26.7597L32.99 46.8217" stroke="#F9F9F9" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+
+    <span id="closeBtnFullScreen" class="closeBtn"></span>
+  </div>
 
   <section id="partners" class="partners block">
     <h2 class="block__title">Партнёры</h2>
@@ -279,7 +280,7 @@
     */
     const btn = document.getElementById('seeAllServices'),
       services = document.getElementById('services');
-    btn.addEventListener('click', () => services.classList.add('opened') )
+    btn.addEventListener('click', () => services.classList.add('openedAllServices') )
   </script>
   <script src="js/gallerySlider.js"></script>
   <script src="js/partnersSlider.js"></script>

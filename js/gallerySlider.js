@@ -1,126 +1,109 @@
-var index = 1;
-const step = 376;
+var INDEX = 1;
+const STEP = 376;
+var inAnim = false;
 const slider = document.getElementById("slider");
-const sliderLength = document.getElementById("slider").children.length;
+const LENGTH = document.getElementById("slider").children.length;
+const arrayFullScreen = Array.from(slider.children);
 
-const firstItem = slider.children[0];
-const firstItemClone = slider.children[0].cloneNode(true);
-const afterFirstItemClone = slider.children[1].cloneNode(true);
-const afterAfterFirstItemClone = slider.children[2].cloneNode(true);
+/**
+ * Slider carousel
+ */
 
-const lastItem = slider.children[sliderLength - 1];
-const lastItemClone = slider.children[sliderLength - 1].cloneNode(true);
-const preLastItemClone = slider.children[sliderLength - 2].cloneNode(true);
-const prePreLastItemClone = slider.children[sliderLength - 3].cloneNode(true);
+const first = slider.children[0];
+const firstClone = slider.children[0].cloneNode(true);
+const secondClone = slider.children[1].cloneNode(true);
+const thirdClone = slider.children[2].cloneNode(true);
 
-firstItemClone.style.fontWeight = "700";
-afterFirstItemClone.style.fontWeight = "700";
-afterAfterFirstItemClone.style.fontWeight = "700";
-lastItemClone.style.fontWeight = "700";
-preLastItemClone.style.fontWeight = "700";
-prePreLastItemClone.style.fontWeight = "700";
+const firstLastClone = slider.children[LENGTH - 1].cloneNode(true);
+const secondLastClone = slider.children[LENGTH - 2].cloneNode(true);
+const thirdLastClone = slider.children[LENGTH - 3].cloneNode(true);
 
-slider.append(firstItemClone);
-slider.append(afterFirstItemClone);
-slider.append(afterAfterFirstItemClone);
+slider.append(firstClone, secondClone, thirdClone);
+slider.insertBefore(firstLastClone, first);
+slider.insertBefore(secondLastClone, firstLastClone);
+slider.insertBefore(thirdLastClone, secondLastClone);
 
-slider.insertBefore(lastItemClone, firstItem);
-slider.insertBefore(preLastItemClone, lastItemClone);
-slider.insertBefore(prePreLastItemClone, preLastItemClone);
+console.dir(slider);
 
-const next = () => {
-  console.log("-----> clicked next");
-  console.dir(slider);
-  console.log("sliderLength", sliderLength);
-  slider.style.left || (slider.style.left = "-1128px");
-  console.log("slider.style.left", slider.style.left);
-  console.log("index", index);
-
-  index++;
-  if (index > sliderLength) {
-    console.log(true);
+const nextSlider = () => {
+  if (inAnim) return;
+  inAnim = true;
+  slider.style.left || (slider.style.left = `-${3 * STEP}px`);
+  INDEX++;
+  if (INDEX > LENGTH) {
     slider.style.transition = `unset`;
-    slider.style.left = "-752px";
-    index = 1;
+    slider.style.left = `-${2 * STEP}px`;
+    INDEX = 1;
   }
   setTimeout(() => {
     slider.style.transition = `left 0.25s ease-out`;
-    slider.style.left = `${parseInt(slider.style.left) - step}px`;
-    console.log("slider.style.left", slider.style.left);
-    console.log("index", index);
+    slider.style.left = `${parseInt(slider.style.left) - STEP}px`;
+    inAnim = false;
   }, 100);
 };
 
-const prev = () => {
-  console.log("-----> clicked prev");
-  console.dir(slider);
-  console.log("sliderLength", sliderLength);
-  slider.style.left || (slider.style.left = "-1128px");
-  console.log("slider.style.left", slider.style.left);
-  console.log("index", index);
-
-  index--;
-  if (index < 1) {
-    console.log(false);
+const prevSlider = () => {
+  if (inAnim) return;
+  inAnim = true;
+  slider.style.left || (slider.style.left = `-${3 * STEP}px`);
+  INDEX--;
+  if (INDEX < 1) {
     slider.style.transition = `unset`;
-    slider.style.left = `${(-3 - sliderLength) * step}px`;
-    index = sliderLength;
+    slider.style.left = `${(-3 - LENGTH) * STEP}px`;
+    INDEX = LENGTH;
   }
   setTimeout(() => {
     slider.style.transition = `left 0.25s ease-out`;
-    slider.style.left = `${parseInt(slider.style.left) + step}px`;
-    console.log("slider.style.left", slider.style.left);
-    console.log("index", index);
+    slider.style.left = `${parseInt(slider.style.left) + STEP}px`;
+    inAnim = false;
   }, 100);
 };
-document.getElementById("rightController").addEventListener("click", next);
-document.getElementById("leftController").addEventListener("click", prev);
+document.getElementById("sliderNextBtn").addEventListener("click", nextSlider);
+document.getElementById("sliderPrevBtn").addEventListener("click", prevSlider);
 
-// const slider = document.getElementById('slider');
-// const left = document.getElementById('leftController');
-// const right = document.getElementById('rightController');
-// const sliderItems = slider.getElementsByClassName('slider_item');
+/**
+ * Full screen carousel
+ */
+var INDEX_FullScreen = 0;
+const imageFullScreen = document.getElementById("imageFullScreen");
+const bodyTag = document.getElementsByTagName("body")[0];
 
-// const STEP = 376;
-// var INDEX = 1;
-// var LAST_INDEX = sliderItems.length;
+const openFullSize = (e) => {
+  INDEX_FullScreen = e.target.dataset.item_id;
+  console.dir(e.target);
+  bodyTag.classList.add("openedFullScreen");
+  imageFullScreen.src = e.target.src;
+};
+const closeFullSize = () => bodyTag.classList.toggle("openedFullScreen");
+const nextFullSize = () => {
+  INDEX_FullScreen++;
+  if (INDEX_FullScreen > LENGTH) INDEX_FullScreen = 1;
+  const src = arrayFullScreen.filter(
+    (i) => i.children[0].dataset.item_id == INDEX_FullScreen
+  )[0].children[0].src;
+  imageFullScreen.src = src;
+};
+const prevFullSize = () => {
+  INDEX_FullScreen--;
+  if (INDEX_FullScreen < 1) INDEX_FullScreen = LENGTH;
+  const src = arrayFullScreen.filter(
+    (i) => i.children[0].dataset.item_id == INDEX_FullScreen
+  )[0].children[0].src;
+  imageFullScreen.src = src;
+};
 
-// const firstSlide = sliderItems[0];
-// const lastSlide = sliderItems[sliderItems.length - 1];
-// const cloneFirst = firstSlide.cloneNode(true);
-// const cloneLast = lastSlide.cloneNode(true);
+document
+  .querySelectorAll(".slider_item")
+  .forEach((e) => e.addEventListener("click", openFullSize));
 
-// slider.appendChild(cloneFirst);
-// slider.insertBefore(cloneLast, firstSlide);
+document
+  .getElementById("closeBtnFullScreen")
+  .addEventListener("click", closeFullSize);
 
-// const checkSlider = (direction) => {
-//   slider.style.left || (slider.style.left = '0px');
+document
+  .getElementById("nextBtnFullScreen")
+  .addEventListener("click", nextFullSize);
 
-//   if (direction === 'left') {
-//     if (INDEX === 1) {
-//       slider.style.left = `${ -1 * LAST_INDEX * STEP }px`;
-//       INDEX = LAST_INDEX;
-//       return
-//     }
-//     INDEX--
-//     return
-//   }
-
-//   if (INDEX === LAST_INDEX) {
-//     slider.style.left = `${STEP}px`;
-//     INDEX = 1;
-//     return
-//   }
-//   INDEX++
-// }
-// const moveLeft = () => {
-//   checkSlider('left');
-//   slider.style.left = `${ parseInt(slider.style.left) + STEP }px`;
-// }
-// const moveRight = () => {
-//   checkSlider('right');
-//   slider.style.left = `${ parseInt(slider.style.left) - STEP }px`;
-// }
-
-// left.addEventListener('click', moveLeft);
-// right.addEventListener('click', moveRight);
+document
+  .getElementById("prevBtnFullScreen")
+  .addEventListener("click", prevFullSize);

@@ -6,14 +6,14 @@
   max-height: 240px;
   margin: 0 auto;
   background-color: $lightBlue-c;
-  z-index: 30;
+  z-index: 40;
 
   .partnersSliderBlock {
     position: relative;
     overflow: hidden;
 
     .controllers {
-      z-index: 35;
+      z-index: 45;
 
       &_side {
         position: absolute;
@@ -38,7 +38,7 @@
           $lightBlue-c 50.03%,
           rgba(249, 249, 249, 0) 100%
         );
-        z-index: 36;
+        z-index: 46;
 
         &::after {
           left: 20px;
@@ -51,7 +51,7 @@
           $lightBlue-c 50.03%,
           rgba(249, 249, 249, 0) 100%
         );
-        z-index: 37;
+        z-index: 47;
 
         &::after {
           right: 20px;
@@ -65,8 +65,8 @@
       display: flex;
       flex-direction: row;
       max-width: 1128px;
-      left: 0;
-      z-index: 32;
+      left: -1140px;
+      z-index: 42;
 
       &_item {
         margin: 0 12px;

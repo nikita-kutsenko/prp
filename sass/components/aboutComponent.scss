@@ -84,3 +84,30 @@
     }
   }
 }
+
+// tablet
+@media only screen and (min-width: 834px) and (max-width: 1024px) {
+  .about {
+    &__card {
+      display: flex;
+      margin: 0 auto 24px;
+      max-width: 778px;
+
+      &_img {
+        width: 210px;
+        height: 210px;
+        margin-right: 90px;
+        border: 10px solid $lightBlue-c;
+        background-size: 210px 210px;
+      }
+    }
+
+    &__textBlock {
+      &_text {
+        &:last-of-type {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

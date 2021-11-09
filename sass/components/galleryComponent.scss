@@ -1,8 +1,8 @@
 @import "./../import/variables.scss", "./../animation/galleryAnimation.scss";
 
 .gallery {
-  padding: 120px 0;
-  height: 480px;
+  // padding: 120px 0;
+  height: 446px;
   margin: 0 auto;
   background-color: $white-c;
   z-index: 30;
@@ -154,5 +154,43 @@
 
   .fullScreen {
     display: flex;
+  }
+}
+
+// tablet
+@media only screen and (min-width: 834px) and (max-width: 1024px) {
+  .gallery {
+    padding: 60px 0 56px;
+    height: 346px;
+    .sliderBlock {
+      .controllers {
+        &_side {
+          height: 246px;
+        }
+      }
+
+      .slider {
+        width: 798px;
+        left: -798px;
+
+        &_item {
+          margin: 0 10px;
+          height: 246px;
+
+          img {
+            min-width: 246px;
+            min-height: 246px;
+            max-width: 246px;
+            max-height: 246px;
+          }
+        }
+      }
+    }
+  }
+
+  .fullScreen {
+    .closeBtn {
+      right: 0;
+    }
   }
 }

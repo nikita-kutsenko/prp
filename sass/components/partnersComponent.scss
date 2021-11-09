@@ -1,9 +1,9 @@
 @import "./../import/variables.scss", "./../animation/partnersAnimation.scss";
 
 .partners {
-  padding: 120px 0;
-  height: auto;
-  max-height: 240px;
+  // padding: 120px 0;
+  // height: auto;
+  height: 240px;
   margin: 0 auto;
   background-color: $lightBlue-c;
   z-index: 40;
@@ -78,7 +78,39 @@
           max-width: 204px;
           max-height: 130px;
           object-fit: cover;
-          border-radius: 14px;
+        }
+      }
+    }
+  }
+}
+
+// tablet
+@media only screen and (min-width: 834px) and (max-width: 1024px) {
+  .partners {
+    max-height: 240px;
+
+    .partnersSliderBlock {
+      .controllers {
+        &_side {
+          height: 90px;
+          width: 110px;
+        }
+      }
+
+      .partnersSlider {
+        max-width: 800px;
+        left: -800px;
+
+        &_item {
+          margin: 0 8px;
+          height: 90px;
+
+          img {
+            min-width: 144px;
+            min-height: 90px;
+            max-width: 144px;
+            max-height: 90px;
+          }
         }
       }
     }

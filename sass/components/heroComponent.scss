@@ -93,3 +93,36 @@
     }
   }
 }
+
+// tablet
+@media only screen and (min-width: 834px) and (max-width: 1024px) {
+  .hero {
+    height: calc(100% + 44px);
+    min-height: 652px;
+    max-height: calc($lap_maxHeight_tab + 44px);
+
+    &__side {
+      &_title {
+        padding-top: 108px;
+        font-size: 56px;
+        line-height: 68px;
+        max-width: 454px;
+      }
+
+      &_block {
+        margin-bottom: 120px;
+        max-width: 396px;
+
+        &_description {
+          margin-bottom: 24px;
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+
+      &_scroll {
+        bottom: -56px;
+      }
+    }
+  }
+}

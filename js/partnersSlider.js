@@ -1,5 +1,6 @@
 var INDEX_P = 1;
-const STEP_P = 228;
+var STEP_P = getStep_P(window.innerWidth);
+var { width_P, height_P } = checkResize_P();
 var inAnim_P = false;
 const slider_P = document.getElementById("partnersSlider");
 const LENGTH_P = document.getElementById("partnersSlider").children.length;
@@ -46,7 +47,6 @@ const next_P = () => {
     inAnim_P = false;
   }, 100);
 };
-
 const prev_P = () => {
   if (inAnim_P) return;
   inAnim_P = true;
@@ -63,9 +63,37 @@ const prev_P = () => {
     inAnim_P = false;
   }, 100);
 };
+function reziseCarousel_P() {
+  slider_P.style.left = `-${(2 + INDEX_P) * STEP_P}px`;
+}
+function getStep_P(width) {
+  var result;
+  switch (true) {
+    case width <= 1024:
+      result = 160;
+      break;
+
+    default:
+      result = 228;
+      break;
+  }
+  return result;
+}
+function checkResize_P() {
+  if (!width_P && !height_P) {
+    return { width_P: window.innerWidth, height_P: window.innerHeight };
+  }
+  var testStep_P = getStep_P(window.innerWidth, window.innerHeight);
+  if (testStep_P !== STEP_P) {
+    STEP_P = testStep_P;
+    reziseCarousel_P();
+  }
+}
+
 document
   .getElementById("partnersRightController")
   .addEventListener("click", next_P);
 document
   .getElementById("partnersLeftController")
   .addEventListener("click", prev_P);
+window.addEventListener("resize", checkResize_P);

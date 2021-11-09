@@ -142,3 +142,78 @@
     }
   }
 }
+
+// tablet
+@media only screen and (min-width: 834px) and (max-width: 1024px) {
+  .contacts {
+    .content {
+      margin: 0 24px 56px;
+      .info {
+        min-width: 320px;
+        margin-right: 50px;
+
+        &__title {
+          font-size: 34px;
+          line-height: 42px;
+          margin: 0 0 58px;
+        }
+      }
+      .map {
+        width: 416px;
+        height: 350px;
+        iframe {
+          width: 416px;
+          height: 350px;
+        }
+      }
+    }
+    .logo {
+      .line {
+        width: 48px;
+        height: 32px;
+      }
+
+      .left {
+        height: 78px;
+        margin-right: 14px;
+
+        .line {
+          width: 32px;
+          &:first-of-type {
+            margin-bottom: 14px;
+          }
+        }
+      }
+
+      .logoImg {
+        height: 78px;
+        margin-right: 14px;
+
+        svg {
+          height: 78px;
+          width: 128px;
+        }
+      }
+
+      .right {
+        height: 78px;
+        width: calc(100% - 188px);
+        .top {
+          width: 100%;
+          margin-bottom: 14px;
+        }
+        .bottom {
+          .text {
+            margin-right: 14px;
+            max-width: 118px;
+            font-size: 14px;
+            line-height: 16px;
+          }
+          .line {
+            width: calc(100% - 118px);
+          }
+        }
+      }
+    }
+  }
+}

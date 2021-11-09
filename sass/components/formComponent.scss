@@ -123,3 +123,24 @@
     }
   }
 }
+
+// tablet
+@media only screen and (min-width: 834px) and (max-width: 1024px) {
+  .form {
+    padding: 44px 0 56px;
+    height: 550px;
+
+    .formArea {
+      .whiteArea {
+        padding: 16px 120px 24px;
+        margin-bottom: 20px;
+
+        &__title {
+          font-size: 34px;
+          line-height: 42px;
+          margin: 0 0 58px;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 var INDEX = 1;
-const STEP = 376;
+var STEP = getStep(window.innerWidth);
+var { width, height } = checkResize();
 var inAnim = false;
 const slider = document.getElementById("slider");
 const LENGTH = document.getElementById("slider").children.length;
@@ -8,7 +9,6 @@ const arrayFullScreen = Array.from(slider.children);
 /**
  * Slider carousel
  */
-
 const first = slider.children[0];
 const firstClone = slider.children[0].cloneNode(true);
 const secondClone = slider.children[1].cloneNode(true);
@@ -22,8 +22,6 @@ slider.append(firstClone, secondClone, thirdClone);
 slider.insertBefore(firstLastClone, first);
 slider.insertBefore(secondLastClone, firstLastClone);
 slider.insertBefore(thirdLastClone, secondLastClone);
-
-console.dir(slider);
 
 const nextSlider = () => {
   if (inAnim) return;
@@ -41,7 +39,6 @@ const nextSlider = () => {
     inAnim = false;
   }, 100);
 };
-
 const prevSlider = () => {
   if (inAnim) return;
   inAnim = true;
@@ -58,8 +55,36 @@ const prevSlider = () => {
     inAnim = false;
   }, 100);
 };
+function reziseCarousel() {
+  slider.style.left = `-${(2 + INDEX) * STEP}px`;
+}
+function getStep(width) {
+  var result;
+  switch (true) {
+    case width <= 1024:
+      result = 266;
+      break;
+
+    default:
+      result = 376;
+      break;
+  }
+  return result;
+}
+function checkResize() {
+  if (!width && !height) {
+    return { width: window.innerWidth, height: window.innerHeight };
+  }
+  var testStep = getStep(window.innerWidth, window.innerHeight);
+  if (testStep !== STEP) {
+    STEP = testStep;
+    reziseCarousel();
+  }
+}
+
 document.getElementById("sliderNextBtn").addEventListener("click", nextSlider);
 document.getElementById("sliderPrevBtn").addEventListener("click", prevSlider);
+window.addEventListener("resize", checkResize);
 
 /**
  * Full screen carousel

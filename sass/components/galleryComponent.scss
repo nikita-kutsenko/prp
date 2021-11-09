@@ -194,3 +194,53 @@
     }
   }
 }
+
+// mobile
+@media only screen and (max-width: 833px) {
+  .gallery {
+    padding: 60px 0 56px;
+    height: 146px;
+    .sliderBlock {
+      .controllers {
+        &_side {
+          height: 246px;
+          width: 80px;
+        }
+      }
+
+      .slider {
+        width: 294px;
+        left: -294px;
+
+        &_item {
+          margin: 0 2px;
+          height: 94px;
+
+          img {
+            min-width: 94px;
+            min-height: 94px;
+            max-width: 94px;
+            max-height: 94px;
+          }
+        }
+        // &_item {
+        //   margin: 0 25px;
+        //   height: 246px;
+
+        //   img {
+        //     min-width: 246px;
+        //     min-height: 246px;
+        //     max-width: 246px;
+        //     max-height: 246px;
+        //   }
+        // }
+      }
+    }
+  }
+
+  .fullScreen {
+    .closeBtn {
+      right: 0;
+    }
+  }
+}

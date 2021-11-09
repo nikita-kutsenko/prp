@@ -126,3 +126,55 @@
     }
   }
 }
+
+// mobile
+@media only screen and (max-width: 833px) {
+  .hero {
+    height: 544px;
+    min-height: 544px;
+    max-height: 544px;
+
+    &__side {
+      height: 100%;
+      width: calc(100% - 50px);
+      padding: 0 38px 0 12px;
+
+      &_title {
+        padding-top: 86px;
+        margin-bottom: 38px;
+        font-size: 32px;
+        line-height: 40px;
+        max-width: 762px;
+      }
+
+      &_block {
+        margin-bottom: 104px;
+        max-width: 762px;
+
+        &_description {
+          margin-bottom: 32px;
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        &_cta {
+          padding: 12px 40px 12px 16px;
+          font-size: 14px;
+          line-height: 18px;
+
+          &::after {
+            top: 10px;
+            right: 14px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      &_scroll {
+        bottom: -96px;
+        right: 50%;
+      }
+    }
+  }
+}

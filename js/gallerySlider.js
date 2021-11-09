@@ -61,6 +61,10 @@ function reziseCarousel() {
 function getStep(width) {
   var result;
   switch (true) {
+    case width <= 833:
+      result = 98;
+      break;
+
     case width <= 1024:
       result = 266;
       break;

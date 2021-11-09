@@ -22,9 +22,9 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="assets/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#499ec4">
+  <meta name="msapplication-TileColor" content="#105589">
   <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" media="(prefers-color-scheme: light)"  content="#499ec4">
+  <meta name="theme-color" media="(prefers-color-scheme: light)"  content="#105589">
   <title>PRP</title>
 </head>
 <!-- <body class="openedFullScreen"> -->
@@ -295,7 +295,12 @@
      * Open burger menu 
     */
     const body = document.getElementsByTagName('body');  
+    const navItems = document.querySelectorAll('.nav__list_item');
+    const navCta = document.querySelector('.nav__cta');
+    const navLogo = document.querySelector('.logo');
+    const allNavItems = [...navItems, navCta, navLogo];
     burger.addEventListener('click', () => bodyTag.classList.toggle('openBurger'))
+    allNavItems.forEach(e => e.addEventListener('click', () => bodyTag.classList.remove('openBurger')))
   </script>
   <script type="text/javascript">
     /** 

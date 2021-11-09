@@ -16,6 +16,22 @@
     right: 30px;
   }
 }
+@keyframes moveLeftMobile {
+  0% {
+    left: -4px;
+  }
+  100% {
+    left: 8px;
+  }
+}
+@keyframes moveRightMobile {
+  0% {
+    right: -4px;
+  }
+  100% {
+    right: 8px;
+  }
+}
 
 .gallery {
   .sliderBlock {
@@ -38,6 +54,26 @@
       // transition: left 0.25s ease-out;
       &_item {
         img {
+        }
+      }
+    }
+  }
+}
+
+// mobile
+@media only screen and (max-width: 833px) {
+  .gallery {
+    .sliderBlock {
+      .controllers {
+        .left {
+          &::after {
+            animation: moveLeftMobile 1s infinite alternate-reverse ease-in-out;
+          }
+        }
+        .right {
+          &::after {
+            animation: moveRightMobile 1s infinite alternate-reverse ease-in-out;
+          }
         }
       }
     }

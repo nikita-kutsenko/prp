@@ -26,11 +26,13 @@ slider.insertBefore(thirdLastClone, secondLastClone);
 const nextSlider = () => {
   if (inAnim) return;
   inAnim = true;
-  slider.style.left || (slider.style.left = `-${3 * STEP}px`);
+  slider.style.left ||
+    (slider.style.left =
+      STEP == 250 ? `-${3 * STEP - 22}px` : `-${3 * STEP}px`);
   INDEX++;
   if (INDEX > LENGTH) {
     slider.style.transition = `unset`;
-    slider.style.left = `-${2 * STEP}px`;
+    slider.style.left = STEP == 250 ? `-${2 * STEP - 22}px` : `-${2 * STEP}px`;
     INDEX = 1;
   }
   setTimeout(() => {
@@ -42,11 +44,16 @@ const nextSlider = () => {
 const prevSlider = () => {
   if (inAnim) return;
   inAnim = true;
-  slider.style.left || (slider.style.left = `-${3 * STEP}px`);
+  slider.style.left ||
+    (slider.style.left =
+      STEP == 250 ? `-${3 * STEP - 22}px` : `-${3 * STEP}px`);
   INDEX--;
   if (INDEX < 1) {
     slider.style.transition = `unset`;
-    slider.style.left = `${(-3 - LENGTH) * STEP}px`;
+    slider.style.left =
+      STEP == 250
+        ? `${(-3 - LENGTH) * STEP + 22}px`
+        : `${(-3 - LENGTH) * STEP}px`;
     INDEX = LENGTH;
   }
   setTimeout(() => {
@@ -62,7 +69,7 @@ function getStep(width) {
   var result;
   switch (true) {
     case width <= 833:
-      result = 98;
+      result = 250;
       break;
 
     case width <= 1024:

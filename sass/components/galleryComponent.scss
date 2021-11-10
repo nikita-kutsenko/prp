@@ -199,41 +199,44 @@
 @media only screen and (max-width: 833px) {
   .gallery {
     padding: 60px 0 56px;
-    height: 146px;
+    height: 346px;
     .sliderBlock {
       .controllers {
         &_side {
           height: 246px;
-          width: 80px;
+          width: 40px;
+        }
+        .left {
+          background: linear-gradient(
+            90deg,
+            $white-c 30%,
+            rgba(249, 249, 249, 0) 100%
+          );
+        }
+        .right {
+          background: linear-gradient(
+            -90deg,
+            $white-c 30%,
+            rgba(249, 249, 249, 0) 100%
+          );
         }
       }
 
       .slider {
         width: 294px;
-        left: -294px;
+        left: -728px;
 
         &_item {
           margin: 0 2px;
-          height: 94px;
+          height: 246px;
 
           img {
-            min-width: 94px;
-            min-height: 94px;
-            max-width: 94px;
-            max-height: 94px;
+            min-width: 246px;
+            min-height: 246px;
+            max-width: 246px;
+            max-height: 246px;
           }
         }
-        // &_item {
-        //   margin: 0 25px;
-        //   height: 246px;
-
-        //   img {
-        //     min-width: 246px;
-        //     min-height: 246px;
-        //     max-width: 246px;
-        //     max-height: 246px;
-        //   }
-        // }
       }
     }
   }

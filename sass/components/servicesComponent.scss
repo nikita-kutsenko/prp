@@ -181,6 +181,7 @@
       grid-template-columns: repeat(1, minmax(296px, 1fr));
       grid-gap: 8px;
       &_item {
+        display: none;
         grid-column: 1;
         padding: 10px 14px 10px 98px;
         border-radius: 24px;
@@ -203,6 +204,12 @@
         &:last-child {
           grid-column: 1;
         }
+      }
+      :nth-child(1),
+      :nth-child(2),
+      :nth-child(3),
+      :nth-child(4) {
+        display: block;
       }
     }
 
@@ -227,6 +234,10 @@
       margin-bottom: 0;
       max-height: none;
       overflow: visible;
+
+      &_item {
+        display: block;
+      }
     }
 
     .services__scroll {

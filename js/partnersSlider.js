@@ -104,3 +104,30 @@ function checkResize_P() {
     reziseCarousel_P();
   }
 }
+
+// swipe for mobile version
+let start_P = null;
+const swipe_P = document.getElementById("partnersSlider");
+const sliderBlock_P = document.getElementById("partnersSliderBlock");
+swipe_P.addEventListener("click", (e) => {
+  if (window.innerWidth <= 833) {
+    openFullSize(e);
+  }
+});
+
+sliderBlock_P.addEventListener("touchstart", function (e) {
+  if (window.innerWidth <= 833) {
+    start = e.changedTouches[0];
+  }
+});
+sliderBlock_P.addEventListener("touchend", function (e) {
+  if (window.innerWidth <= 833) {
+    const end = e.changedTouches[0];
+
+    if (end.screenX - start.screenX > 60) {
+      prevSlider(true);
+    } else if (end.screenX - start.screenX < -60) {
+      nextSlider(true);
+    }
+  }
+});

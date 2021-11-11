@@ -107,27 +107,21 @@ function checkResize_P() {
 
 // swipe for mobile version
 let start_P = null;
-const swipe_P = document.getElementById("partnersSlider");
 const sliderBlock_P = document.getElementById("partnersSliderBlock");
-swipe_P.addEventListener("click", (e) => {
-  if (window.innerWidth <= 833) {
-    openFullSize(e);
-  }
-});
 
 sliderBlock_P.addEventListener("touchstart", function (e) {
   if (window.innerWidth <= 833) {
-    start = e.changedTouches[0];
+    start_P = e.changedTouches[0];
   }
 });
 sliderBlock_P.addEventListener("touchend", function (e) {
   if (window.innerWidth <= 833) {
-    const end = e.changedTouches[0];
+    const end_P = e.changedTouches[0];
 
-    if (end.screenX - start.screenX > 60) {
-      prevSlider(true);
-    } else if (end.screenX - start.screenX < -60) {
-      nextSlider(true);
+    if (end_P.screenX - start_P.screenX > 60) {
+      prev_P(true);
+    } else if (end_P.screenX - start_P.screenX < -60) {
+      next_P(true);
     }
   }
 });

@@ -102,27 +102,56 @@ document.getElementById("sliderPrevBtn").addEventListener("click", prevSlider);
 window.addEventListener("resize", checkResize);
 
 // swipe for mobile version
-if (window.innerWidth <= 833) {
-  let start = null;
-  const swipe = document.getElementById("slider");
-  swipe.addEventListener("click", (e) => {
+let start = null;
+const swipe = document.getElementById("slider");
+const gallery = document.getElementById("gallery");
+const sliderBlock = document.getElementById("sliderBlock");
+swipe.addEventListener("click", (e) => {
+  if (window.innerWidth <= 833) {
     console.dir(e);
     openFullSize(e);
-  });
+  }
+});
 
-  swipe.addEventListener("touchstart", function (e) {
+swipe.addEventListener("touchstart", function (e) {
+  if (window.innerWidth <= 833) {
     start = e.changedTouches[0];
-  });
-  swipe.addEventListener("touchend", function (e) {
+    gallery.style.background = "#000";
+  }
+});
+swipe.addEventListener("touchend", function (e) {
+  if (window.innerWidth <= 833) {
     const end = e.changedTouches[0];
 
     if (end.screenX - start.screenX > 60) {
+      gallery.style.background = "red";
       prevSlider(true);
     } else if (end.screenX - start.screenX < -60) {
+      gallery.style.background = "red";
       nextSlider(true);
     }
-  });
-}
+  }
+});
+
+sliderBlock.addEventListener("touchstart", function (e) {
+  if (window.innerWidth <= 833) {
+    start = e.changedTouches[0];
+    gallery.style.background = "#d3f";
+  }
+});
+sliderBlock.addEventListener("touchend", function (e) {
+  if (window.innerWidth <= 833) {
+    const end = e.changedTouches[0];
+
+    if (end.screenX - start.screenX > 60) {
+      gallery.style.background = "blue";
+      prevSlider(true);
+    } else if (end.screenX - start.screenX < -60) {
+      gallery.style.background = "blue";
+      nextSlider(true);
+    }
+  }
+});
 
 /**
  * Full screen carousel

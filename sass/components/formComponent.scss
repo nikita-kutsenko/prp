@@ -144,3 +144,73 @@
     }
   }
 }
+
+// mobile
+@media only screen and (max-width: 833px) {
+  .form {
+    padding: 44px 0 32px;
+    height: 562px;
+
+    .formArea {
+      .whiteArea {
+        padding: 24px 22px 32px;
+        max-width: 254px;
+        border-radius: 10px;
+        margin-bottom: 24px;
+
+        &__title {
+          font-size: 24px;
+          line-height: 28px;
+          margin: 0 0 24px;
+        }
+
+        &__description {
+          font-size: 12px;
+          line-height: 16px;
+          margin-bottom: 16px;
+        }
+
+        &__content {
+          display: grid;
+          grid-template-columns: repeat(1, minmax(252px, 252px));
+          grid-auto-flow: row dense;
+          grid-gap: 12px;
+          .field {
+            grid-column: 1;
+            label {
+              font-size: 10px;
+              line-height: 12px;
+            }
+            input,
+            textarea {
+              width: 252px;
+              padding: 8px 16px;
+              border-radius: 4px;
+              font-size: 12px;
+              line-height: 14px;
+            }
+            &:last-child {
+              grid-column: 1;
+              textarea {
+                height: 88px;
+                min-width: 252px;
+                max-width: 252px;
+              }
+            }
+          }
+        }
+      }
+      &__submit {
+        padding: 10px 40px 10px 12px;
+        font-size: 14px;
+        line-height: 18px;
+
+        &::after {
+          top: 8px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

@@ -242,8 +242,45 @@
   }
 
   .fullScreen {
+    .prevBtn,
+    .nextBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 300px;
+      cursor: pointer;
+    }
+    .nextBtn svg {
+      transform: rotate(180deg);
+    }
+    .prevBtn svg,
+    .nextBtn svg {
+      width: 26px;
+      height: 42px;
+    }
+
+    .image {
+      width: 70%;
+    }
+
     .closeBtn {
-      right: 0;
+      top: -8px;
+      right: -8px;
+      width: 60px;
+      height: 60px;
+
+      &::before,
+      &::after {
+        height: 30px;
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
     }
   }
 }

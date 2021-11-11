@@ -51,6 +51,7 @@
   .block {
     height: calc(100% - 100px);
     max-height: calc($lap_maxHeight_mob - 100px);
+    min-width: 320px;
     padding: 68px 0 32px;
 
     &__title {

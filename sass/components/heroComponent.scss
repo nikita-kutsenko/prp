@@ -5,6 +5,7 @@
   height: calc(100% + 70px);
   min-height: 872px;
   max-height: calc($lap_maxHeight + 70px);
+  min-width: 320px;
   background: linear-gradient(0deg, $hero-bg-c, $hero-bg-c),
     url(./../assets/img/hero-bg.jpg) top / cover no-repeat;
   z-index: 1;

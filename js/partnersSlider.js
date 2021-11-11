@@ -4,6 +4,7 @@ var { width_P, height_P } = checkResize_P();
 var inAnim_P = false;
 const slider_P = document.getElementById("partnersSlider");
 const LENGTH_P = document.getElementById("partnersSlider").children.length;
+var timer_P = setInterval(next_P, 3000);
 
 const first_P = slider_P.children[0];
 const firstClone_P = slider_P.children[0].cloneNode(true);
@@ -31,8 +32,17 @@ slider_P.insertBefore(thirdLastClone_P, secondLastClone_P);
 slider_P.insertBefore(fourthLastClone_P, thirdLastClone_P);
 slider_P.insertBefore(fifthLastClone_P, fourthLastClone_P);
 
-const next_P = () => {
+document
+  .getElementById("partnersRightController")
+  .addEventListener("click", next_P, true);
+document
+  .getElementById("partnersLeftController")
+  .addEventListener("click", prev_P, true);
+window.addEventListener("resize", checkResize_P);
+
+function next_P(userClicked) {
   if (inAnim_P) return;
+  if (userClicked && !isNaN(timer_P)) clearInterval(timer_P);
   inAnim_P = true;
   slider_P.style.left || (slider_P.style.left = `-${5 * STEP_P}px`);
   INDEX_P++;
@@ -46,9 +56,10 @@ const next_P = () => {
     slider_P.style.left = `${parseInt(slider_P.style.left) - STEP_P}px`;
     inAnim_P = false;
   }, 100);
-};
-const prev_P = () => {
+}
+function prev_P(userClicked) {
   if (inAnim_P) return;
+  if (userClicked && !isNaN(timer_P)) clearInterval(timer_P);
   inAnim_P = true;
   slider_P.style.left || (slider_P.style.left = `-${5 * STEP_P}px`);
   INDEX_P--;
@@ -62,13 +73,17 @@ const prev_P = () => {
     slider_P.style.left = `${parseInt(slider_P.style.left) + STEP_P}px`;
     inAnim_P = false;
   }, 100);
-};
+}
 function reziseCarousel_P() {
   slider_P.style.left = `-${(2 + INDEX_P) * STEP_P}px`;
 }
 function getStep_P(width) {
   var result;
   switch (true) {
+    case width <= 833:
+      result = 98;
+      break;
+
     case width <= 1024:
       result = 160;
       break;
@@ -89,11 +104,3 @@ function checkResize_P() {
     reziseCarousel_P();
   }
 }
-
-document
-  .getElementById("partnersRightController")
-  .addEventListener("click", next_P);
-document
-  .getElementById("partnersLeftController")
-  .addEventListener("click", prev_P);
-window.addEventListener("resize", checkResize_P);

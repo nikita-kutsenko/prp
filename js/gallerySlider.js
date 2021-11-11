@@ -4,6 +4,7 @@ var { width, height } = checkResize();
 var inAnim = false;
 const slider = document.getElementById("slider");
 const LENGTH = document.getElementById("slider").children.length;
+var timer = setInterval(nextSlider, 3000);
 const arrayFullScreen = Array.from(slider.children);
 
 /**
@@ -23,8 +24,9 @@ slider.insertBefore(firstLastClone, first);
 slider.insertBefore(secondLastClone, firstLastClone);
 slider.insertBefore(thirdLastClone, secondLastClone);
 
-const nextSlider = () => {
+function nextSlider(userClicked) {
   if (inAnim) return;
+  if (userClicked && !isNaN(timer)) clearInterval(timer);
   inAnim = true;
   slider.style.left ||
     (slider.style.left =
@@ -40,9 +42,10 @@ const nextSlider = () => {
     slider.style.left = `${parseInt(slider.style.left) - STEP}px`;
     inAnim = false;
   }, 100);
-};
-const prevSlider = () => {
+}
+function prevSlider(userClicked) {
   if (inAnim) return;
+  if (userClicked && !isNaN(timer)) clearInterval(timer);
   inAnim = true;
   slider.style.left ||
     (slider.style.left =
@@ -61,9 +64,10 @@ const prevSlider = () => {
     slider.style.left = `${parseInt(slider.style.left) + STEP}px`;
     inAnim = false;
   }, 100);
-};
+}
 function reziseCarousel() {
-  slider.style.left = `-${(2 + INDEX) * STEP}px`;
+  slider.style.left =
+    STEP == 250 ? `-${(2 + INDEX) * STEP - 22}px` : `-${(2 + INDEX) * STEP}px`;
 }
 function getStep(width) {
   var result;
@@ -96,6 +100,29 @@ function checkResize() {
 document.getElementById("sliderNextBtn").addEventListener("click", nextSlider);
 document.getElementById("sliderPrevBtn").addEventListener("click", prevSlider);
 window.addEventListener("resize", checkResize);
+
+// swipe for mobile version
+if (window.innerWidth <= 833) {
+  let start = null;
+  const swipe = document.getElementById("slider");
+  swipe.addEventListener("click", (e) => {
+    console.dir(e);
+    openFullSize(e);
+  });
+
+  swipe.addEventListener("touchstart", function (e) {
+    start = e.changedTouches[0];
+  });
+  swipe.addEventListener("touchend", function (e) {
+    const end = e.changedTouches[0];
+
+    if (end.screenX - start.screenX > 60) {
+      prevSlider(true);
+    } else if (end.screenX - start.screenX < -60) {
+      nextSlider(true);
+    }
+  });
+}
 
 /**
  * Full screen carousel

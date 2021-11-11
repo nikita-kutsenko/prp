@@ -69,7 +69,7 @@ function prevSlider(userClicked) {
     inAnim = false;
   }, 100);
 }
-function reziseCarousel() {
+function resizeCarousel() {
   slider.style.left =
     STEP == 250 ? `-${(2 + INDEX) * STEP - 22}px` : `-${(2 + INDEX) * STEP}px`;
 }
@@ -97,7 +97,7 @@ function checkResize() {
   var testStep = getStep(window.innerWidth, window.innerHeight);
   if (testStep !== STEP) {
     STEP = testStep;
-    reziseCarousel();
+    resizeCarousel();
   }
 }
 

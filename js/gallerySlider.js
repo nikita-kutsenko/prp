@@ -2,27 +2,29 @@ var INDEX = 1;
 var STEP = getStep(window.innerWidth);
 var { width, height } = checkResize();
 var inAnim = false;
-const slider = document.getElementById("slider");
-const LENGTH = document.getElementById("slider").children.length;
+var LENGTH;
 var timer = setInterval(nextSlider, 3000);
 const arrayFullScreen = Array.from(slider.children);
 
 /**
  * Slider carousel
  */
-const first = slider.children[0];
-const firstClone = slider.children[0].cloneNode(true);
-const secondClone = slider.children[1].cloneNode(true);
-const thirdClone = slider.children[2].cloneNode(true);
+function createGalleryClones() {
+  LENGTH = document.getElementById("slider").children.length;
+  const first = slider.children[0];
+  const firstClone = slider.children[0].cloneNode(true);
+  const secondClone = slider.children[1].cloneNode(true);
+  const thirdClone = slider.children[2].cloneNode(true);
 
-const firstLastClone = slider.children[LENGTH - 1].cloneNode(true);
-const secondLastClone = slider.children[LENGTH - 2].cloneNode(true);
-const thirdLastClone = slider.children[LENGTH - 3].cloneNode(true);
+  const firstLastClone = slider.children[LENGTH - 1].cloneNode(true);
+  const secondLastClone = slider.children[LENGTH - 2].cloneNode(true);
+  const thirdLastClone = slider.children[LENGTH - 3].cloneNode(true);
 
-slider.append(firstClone, secondClone, thirdClone);
-slider.insertBefore(firstLastClone, first);
-slider.insertBefore(secondLastClone, firstLastClone);
-slider.insertBefore(thirdLastClone, secondLastClone);
+  slider.append(firstClone, secondClone, thirdClone);
+  slider.insertBefore(firstLastClone, first);
+  slider.insertBefore(secondLastClone, firstLastClone);
+  slider.insertBefore(thirdLastClone, secondLastClone);
+}
 
 document.getElementById("sliderNextBtn").addEventListener("click", nextSlider);
 document.getElementById("sliderPrevBtn").addEventListener("click", prevSlider);

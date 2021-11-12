@@ -4,13 +4,14 @@ var { width, height } = checkResize();
 var inAnim = false;
 var LENGTH;
 var timer = setInterval(nextSlider, 3000);
-const arrayFullScreen = Array.from(slider.children);
+var arrayFullScreen;
 
 /**
  * Slider carousel
  */
 function createGalleryClones() {
   LENGTH = document.getElementById("slider").children.length;
+  arrayFullScreen = Array.from(slider.children);
   const first = slider.children[0];
   const firstClone = slider.children[0].cloneNode(true);
   const secondClone = slider.children[1].cloneNode(true);
@@ -108,26 +109,26 @@ let start = null;
 const swipe = document.getElementById("slider");
 const sliderBlock = document.getElementById("sliderBlock");
 swipe.addEventListener("click", (e) => {
-  if (window.innerWidth <= 833) {
-    openFullSize(e);
-  }
+  // if (window.innerWidth <= 833) {
+  openFullSize(e);
+  // }
 });
 
 sliderBlock.addEventListener("touchstart", function (e) {
-  if (window.innerWidth <= 833) {
-    start = e.changedTouches[0];
-  }
+  // if (window.innerWidth <= 833) {
+  start = e.changedTouches[0];
+  // }
 });
 sliderBlock.addEventListener("touchend", function (e) {
-  if (window.innerWidth <= 833) {
-    const end = e.changedTouches[0];
+  // if (window.innerWidth <= 833) {
+  const end = e.changedTouches[0];
 
-    if (end.screenX - start.screenX > 60) {
-      prevSlider(true);
-    } else if (end.screenX - start.screenX < -60) {
-      nextSlider(true);
-    }
+  if (end.screenX - start.screenX > 60) {
+    prevSlider(true);
+  } else if (end.screenX - start.screenX < -60) {
+    nextSlider(true);
   }
+  // }
 });
 
 /**

@@ -22,7 +22,7 @@ function loadImage() {
     test.img = new Image();
     test.img.onload = keepSearch;
     test.img.onerror = stopSearch;
-    test.img.src = `assets/gallery/gallery-${test.i}.jpeg`;
+    test.img.src = `assets/gallery/${test.i}.jpeg`;
     test.img.dataset.item_id = test.i;
     test.img.dataset.loading = "lazy";
 

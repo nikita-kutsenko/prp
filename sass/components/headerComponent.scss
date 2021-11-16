@@ -15,8 +15,14 @@
     align-items: center;
     .logo {
       height: 62px;
+      width: 102px;
       filter: $shadow_header;
       z-index: 10010;
+      img {
+        height: 62px;
+        width: 102px;
+        object-fit: contain;
+      }
     }
     .burger {
       display: none;
@@ -123,9 +129,10 @@
     .side {
       height: 40px;
       .logo {
+        width: 65px;
         height: 40px;
 
-        svg {
+        img {
           width: 65px;
           height: 40px;
         }
@@ -163,7 +170,8 @@
 
       .logo {
         height: 36px;
-        svg {
+        width: 58px;
+        img {
           width: 58px;
           height: 36px;
         }

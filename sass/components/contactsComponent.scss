@@ -111,8 +111,10 @@
     }
 
     .logoImg {
-      height: 120px;
       margin-right: 24px;
+      height: 120px;
+      width: 198px;
+      object-fit: contain;
     }
 
     .right {
@@ -187,12 +189,8 @@
 
       .logoImg {
         height: 78px;
+        width: 128px;
         margin-right: 14px;
-
-        svg {
-          height: 78px;
-          width: 128px;
-        }
       }
 
       .right {
@@ -295,12 +293,8 @@
 
       .logoImg {
         height: 38px;
+        width: 58px;
         margin-right: 6px;
-
-        svg {
-          height: 38px;
-          width: 58px;
-        }
       }
 
       .right {

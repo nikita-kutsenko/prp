@@ -1,23 +1,3 @@
-// /**
-//  * Validation
-//  * */
-// function emailValidation(email) {
-//   const re =
-//     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//   return re.test(email);
-// }
-// function validateEmail() {
-//   const email = document.getElementById("form_email");
-
-//   if (emailValidation(email.value)) {
-//     email.style.color = "green";
-//   } else {
-//     email.style.color = "red";
-//   }
-//   return false;
-// }
-// document.getElementById("form_email").addEventListener("input", validateEmail);
-
 /**
  * Submit form to send email
  */
@@ -30,7 +10,7 @@ function submitForm() {
   const subject = "PRP - Форма связи";
 
   window.open(
-    "mailto:ruslan.ponomarenko@pr-p.com.ua?subject=" +
+    "mailto:info.prpartners@gmail.com?subject=" +
       encodeURIComponent(subject) +
       "&body=Имя Фамилия:%20" +
       encodeURIComponent(firstname) +

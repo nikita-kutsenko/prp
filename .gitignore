@@ -5,6 +5,7 @@
 .c9/
 *.launch
 .settings/
+*.code-workspace
 
 # IDE - VSCode
 .vscode/*

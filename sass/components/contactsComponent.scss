@@ -11,7 +11,7 @@
     margin-bottom: 96px;
     z-index: 61;
     .info {
-      min-width: 546px;
+      min-width: 358px;
       margin-right: 24px;
       z-index: 62;
 
@@ -22,6 +22,11 @@
         line-height: 52px;
         text-align: center;
         margin: 0 0 58px;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
 
         color: $black-c;
 
@@ -51,10 +56,10 @@
         line-height: 18px;
         margin-bottom: 4px;
         color: $black-c;
-        -webkit-user-select: initial;
-        -moz-user-select: initial;
-        -ms-user-select: initial;
-        user-select: initial;
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
       }
       address:last-of-type {
         margin-bottom: 64px;
@@ -66,10 +71,10 @@
         font-size: 18px;
         line-height: 22px;
         color: $black-c;
-        -webkit-user-select: initial;
-        -moz-user-select: initial;
-        -ms-user-select: initial;
-        user-select: initial;
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
       }
 
       &__email {
@@ -78,10 +83,10 @@
         font-size: 18px;
         line-height: 22px;
         color: $black-c;
-        -webkit-user-select: initial;
-        -moz-user-select: initial;
-        -ms-user-select: initial;
-        user-select: initial;
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
       }
     }
   }

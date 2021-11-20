@@ -40,10 +40,20 @@
 
     z-index: 23;
     &_item {
+      position: relative;
       grid-column: span 2;
       padding: 24px 24px 32px 204px;
       border-radius: 24px;
       background-color: $white-c;
+
+      &_icon {
+        position: absolute;
+        width: 96px;
+        height: 96px;
+        left: 54px;
+        top: 48px;
+        font-size: 10px;
+      }
 
       &_title {
         margin-bottom: 24px;
@@ -66,7 +76,7 @@
         color: $black-c;
       }
 
-      &:last-child {
+      &:last-child:nth-of-type(odd) {
         grid-column: 2 / span 2;
       }
     }
@@ -149,6 +159,14 @@
       &_item {
         padding: 16px 16px 24px 136px;
 
+        &_icon {
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          left: 28px;
+          top: 24px;
+        }
+
         &_title {
           max-width: 312px;
           margin-bottom: 16px;
@@ -186,6 +204,14 @@
         padding: 10px 14px 10px 98px;
         border-radius: 24px;
 
+        &_icon {
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          left: 20px;
+          top: 26px;
+        }
+
         &_title {
           margin-bottom: 6px;
           height: auto;
@@ -201,7 +227,7 @@
           line-height: 14px;
         }
 
-        &:last-child {
+        &:last-child:nth-of-type(odd) {
           grid-column: 1;
         }
       }

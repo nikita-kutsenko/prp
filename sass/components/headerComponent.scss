@@ -9,6 +9,11 @@
   padding: 4px 48px;
   z-index: 10000;
 
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
   .side {
     height: 62px;
     display: flex;

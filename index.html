@@ -27,7 +27,6 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)"  content="#105589">
   <title>PR-P</title>
 </head>
-<!-- <body class="openedFullScreen"> -->
 <body>
   <header id="header" class="header">
     <div class="side">
@@ -48,102 +47,35 @@
     </nav>
     <div class="bg"></div>
   </header>
+  <script type="text/javascript">
+    /** 
+     * Header background color changing on Y scroll 
+    */
+    const header = document.getElementById('header');
+    window.addEventListener("scroll", () => {
+      window.pageYOffset > 70 
+      ? header.classList.add('fill_header') 
+      : header.classList.remove('fill_header')
+    });
+  </script>
+  <script type="text/javascript">
+    /** 
+     * Open burger menu 
+    */
+    const body = document.getElementsByTagName('body');
+    const bodyTag = document.getElementsByTagName("body")[0];
+    const navItems = document.querySelectorAll('.nav__list_item');
+    const navCta = document.querySelector('.nav__cta');
+    const navLogo = document.querySelector('.logo');
+    const allNavItems = [...navItems, navCta, navLogo];
+    burger.addEventListener('click', () => bodyTag.classList.toggle('openBurger'))
+    allNavItems.forEach(e => e.addEventListener('click', () => bodyTag.classList.remove('openBurger')))
+  </script>
   
-  <section id="hero" class="hero">
-    <div class="hero__side">
-      <h1 class="hero__side_title">Lorem ipsum dolor sit amet.</h1>
-      <div class="hero__side_block">
-        <h2 class="hero__side_block_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h2>
-        <span class="hero__side_block_cta">Узнать детальнее</span>
-      </div>
-      <a href="#about" class="hero__side_scroll"></a> 
-    </div>
-  </section>
-
-  <section id="about" class="about block">
-    <h2 class="block__title">О нас</h2>
-
-    <div class="about__card">
-      <span class="about__card_img"></span>
-      <div class="about__card_content">
-        <h3 class="name">Руслан Пономаренко</h3>
-        <h4 class="work-title">Директор</h4>
-        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <ul class="socialMedia">
-          <li class="socialMedia_item">
-            <a href="#" class="socialMedia_item_link">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5459 9.8818C11.5459 10.9279 10.7584 11.7649 9.49413 11.7649H9.47096C8.25365 11.7649 7.46667 10.9279 7.46667 9.8818C7.46667 8.8136 8.27762 8 9.51803 8C10.7584 8 11.5223 8.8136 11.5459 9.8818ZM11.307 13.2519V24.1464H7.68109V13.2519H11.307ZM24.3834 24.1464L24.3836 17.8998C24.3836 14.5535 22.5948 12.9961 20.2088 12.9961C18.2836 12.9961 17.4217 14.0535 16.9405 14.7953V13.2522H13.3141C13.3619 14.2745 13.3141 24.1467 13.3141 24.1467H16.9405V18.0623C16.9405 17.7367 16.964 17.4119 17.0599 17.1788C17.3219 16.5283 17.9186 15.8548 18.9203 15.8548C20.2329 15.8548 20.7576 16.8538 20.7576 18.3178V24.1464H24.3834Z" fill="#0077B5"/>
-              </svg>
-            </a>
-          </li>
-          <li class="socialMedia_item">
-            <a href="#" class="socialMedia_item_link">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.6678 25.4077V16.7028H20.0707L20.3891 13.7031H17.6678L17.6718 12.2017C17.6718 11.4193 17.7462 11.0001 18.8699 11.0001H20.3721V8H17.9688C15.0821 8 14.0661 9.4552 14.0661 11.9024V13.7034H12.2667V16.7031H14.0661V25.4077H17.6678Z" fill="#3B5998"/>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="about__textBlock">
-      <h3 class="about__textBlock_title">Lorem ipsum</h3>
-      <p class="about__textBlock_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-      <p class="about__textBlock_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-    </div>
-  </section>
-
-  <section id="services" class="services block">
-    <div class="services_blur"></div>
-    <h2 class="block__title">Услуги</h2>
-    <ul class="services__list">
-      <li class="services__list_item">
-        <h4 class="services__list_item_title">Продажа криогенного оборудования</h4>
-        <p class="services__list_item_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-      </li>
-      <li class="services__list_item">
-        <h4 class="services__list_item_title">Установка оборудования</h4>
-        <p class="services__list_item_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-      </li>
-      <li class="services__list_item">
-        <h4 class="services__list_item_title">Консалтинг</h4>
-        <p class="services__list_item_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-      </li>
-      <li class="services__list_item">
-        <h4 class="services__list_item_title">Гарантийное сервисное обслуживание</h4>
-        <p class="services__list_item_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-      </li>
-      <li class="services__list_item">
-        <h4 class="services__list_item_title">Продажа криогенных насосов</h4>
-        <p class="services__list_item_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-      </li>
-      <li class="services__list_item">
-        <h4 class="services__list_item_title">Продажа криогенных ёмкостей</h4>
-        <p class="services__list_item_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-      </li>
-      <li class="services__list_item">
-        <h4 class="services__list_item_title">Продажа запасных частей</h4>
-        <p class="services__list_item_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-      </li>
-    </ul>
-    <span id="seeAllServices" class="services__scroll"></span> 
-  </section>
-
-  <section id="gallery" class="gallery block">
-    <h2 class="block__title">Галерея</h2>
-    <!-- slider -->
-    <div id="sliderBlock" class="sliderBlock">
-      <div class="controllers">
-        <span id="sliderPrevBtn" class="controllers_side left"></span>
-        <span id="sliderNextBtn" class="controllers_side right"></span>
-      </div>
-      <ul id="slider" class="slider"></ul>
-    </div>
-  </section>
-  <script src="js/getGalleryImages.js"></script>
-  
+  <section id="hero" class="hero"></section>
+  <section id="about" class="about block"></section>
+  <section id="services" class="services block"></section>
+  <section id="gallery" class="gallery block"></section>
   <div class="fullScreen">
     <span id="prevBtnFullScreen" class="prevBtn">
       <svg width="48" height="54" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -161,26 +93,7 @@
 
     <span id="closeBtnFullScreen" class="closeBtn"></span>
   </div>
-
-  <section id="partners" class="partners block">
-    <h2 class="block__title">Партнёры</h2>
-    <!-- slider -->
-    <div id="partnersSliderBlock" class="partnersSliderBlock">
-      <div class="controllers">
-        <span id="partnersLeftController" class="controllers_side left"></span>
-        <span id="partnersRightController" class="controllers_side right"></span>
-      </div>
-      <ul id="partnersSlider" class="partnersSlider">
-        <li class="partnersSlider_item"><img src="assets/img/temp_partners.png" loading="lazy" alt="1" srcset=""></li>
-        <li class="partnersSlider_item"><img src="assets/img/temp_partners.png" loading="lazy" alt="2" srcset=""></li>
-        <li class="partnersSlider_item"><img src="assets/img/temp_partners.png" loading="lazy" alt="3" srcset=""></li>
-        <li class="partnersSlider_item"><img src="assets/img/temp_partners.png" loading="lazy" alt="4" srcset=""></li>
-        <li class="partnersSlider_item"><img src="assets/img/temp_partners.png" loading="lazy" alt="5" srcset=""></li>
-        <li class="partnersSlider_item"><img src="assets/img/temp_partners.png" loading="lazy" alt="6" srcset=""></li>
-      </ul>
-    </div>
-  </section>
-
+  <section id="partners" class="partners block"></section>
   <section id="form" class="form block">
     <!-- Global form area -->
     <form class="formArea">
@@ -219,21 +132,9 @@
       <span id="form_submit" class="formArea__submit"onclick="submitForm()">Отправить</span>
     </form>
   </section>
-
   <footer id="contacts" class="contacts block">
     <div class="content">
-      <div class="info">
-        <h2 class="info__title">Контакты</h2>
-  
-        <h3 class="info__subtitle">Местоположение</h3>
-        <p class="info__location">ТОВ ПІ ЕР ПАРТНЕРС</p>
-        <address class="info__location">45 Героїв проспект, Дніпро, 49106</address>
-  
-        <a href="tel:+380676342673" class="info__phone">+38 067 634 26 73</a>
-        <a href="tel:+380503591729" class="info__phone">+38 050 359 17 29</a>
-        <a href="mailto:info.prpartners@gmail.com" class="info__email">info.prpartners@gmail.com</a>
-  
-      </div>
+      <div id="contactsInfo" class="info"></div>
       <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.4584556107857!2d35.072492715667885!3d48.40934214017256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbfc850e346dd5%3A0x35cb1e12b3c88f74!2z0L_RgNC-0YHQvy4g0JPQtdGA0L7QtdCyLCA0NSwg0JTQvdC40L_RgNC-LCDQlNC90LXQv9GA0L7Qv9C10YLRgNC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNDkwMDA!5e0!3m2!1sru!2sua!4v1636728449244!5m2!1sru!2sua" width="546" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
@@ -253,40 +154,23 @@
       </div>
     </div>
   </footer>
-
-  <script type="text/javascript">
-    /** 
-     * Header background color changing on Y scroll 
-    */
-    const header = document.getElementById('header');
-    window.addEventListener("scroll", () => {
-      window.pageYOffset > 70 
-      ? header.classList.add('fill_header') 
-      : header.classList.remove('fill_header')
-    });
-  </script>
-  <script type="text/javascript">
-    /** 
-     * Open burger menu 
-    */
-    const body = document.getElementsByTagName('body');  
-    const navItems = document.querySelectorAll('.nav__list_item');
-    const navCta = document.querySelector('.nav__cta');
-    const navLogo = document.querySelector('.logo');
-    const allNavItems = [...navItems, navCta, navLogo];
-    burger.addEventListener('click', () => bodyTag.classList.toggle('openBurger'))
-    allNavItems.forEach(e => e.addEventListener('click', () => bodyTag.classList.remove('openBurger')))
-  </script>
+  
   <script type="text/javascript">
     /** 
      * Dislpaying full list of services on "show more" button click 
     */
-    const btn = document.getElementById('seeAllServices'),
-      services = document.getElementById('services');
-    btn.addEventListener('click', () => services.classList.add('openedAllServices') )
+   function setSeeAllServices() {
+     const btn = document.getElementById('seeAllServices'),
+       services = document.getElementById('services');
+     btn.addEventListener('click', () => services.classList.add('openedAllServices') )
+   }
   </script>
+  <script src="js/setContent.js"></script>
+  <script src="js/getImages.js"></script>
   <script src="js/gallerySlider.js"></script>
+  <script src="js/getPartnersImages.js"></script>
   <script src="js/partnersSlider.js"></script>
-  <script src="js/emailActions.js"></script>
+  <script src="js/email.js"></script>
+  <script src="js/init.js"></script>
 </body>
 </html>

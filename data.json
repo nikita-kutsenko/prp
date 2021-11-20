@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "Lorem ipsum dolor sit amet.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "cta": "Узнать детальнее"
+  },
+  "about": {
+    "title": "О нас",
+    "card": {
+      "name": "Руслан Пономаренко",
+      "workTitle": "Директор",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "url_linkedin": "#",
+      "url_facebook": "#"
+    },
+    "textBlock": {
+      "title": "Lorem ipsum",
+      "text": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      ]
+    }
+  },
+  "services": {
+    "title": "Услуги",
+    "list": [
+      {
+        "title": "Продажа криогенного оборудования",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+      },
+      {
+        "title": "Установка оборудования",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+      },
+      {
+        "title": "Консалтинг",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+      },
+      {
+        "title": "Гарантийное сервисное обслуживание",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+      },
+      {
+        "title": "Продажа криогенных насосов",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+      },
+      {
+        "title": "Продажа криогенных ёмкостей",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+      },
+      {
+        "title": "Продажа запасных частей",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Галерея"
+  },
+  "partners": {
+    "title": "Партнёры"
+  },
+  "contactsInfo": {
+    "title": "Контакты",
+    "subtitle": "Местоположение",
+    "company": "ТОВ ПІ ЕР ПАРТНЕРС",
+    "location": "45 Героїв проспект, Дніпро, 49106",
+    "phones": [
+      { "callTo": "+380676342673", "toShow": "+38 (067) 634-26-73" },
+      { "callTo": "+380503591729", "toShow": "+38 (050) 359-17-29" }
+    ],
+    "email": "info.prpartners@gmail.com"
+  }
+}

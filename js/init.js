@@ -10,7 +10,7 @@ async function getData(url) {
 }
 
 (async function contentInit() {
-  const data = await getData("../data.json");
+  const data = await getData("data.json");
 
   document.getElementById("hero").innerHTML = SetContent.hero(data.hero);
   document.getElementById("about").innerHTML = SetContent.about(data.about);

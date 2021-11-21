@@ -51,7 +51,7 @@ class SetContent {
         (e, i) =>
           `<li class="services__list_item">
             <img 
-              src="assets/services/${i++}.png" 
+              src="assets/services/${i + 1}.png" 
               alt="${e.title}" 
               class="services__list_item_icon">
             <h4 class="services__list_item_title">${e.title}</h4>
